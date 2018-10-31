@@ -1,12 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import {createStore,applyMiddleware ,compose} from 'redux';
+import React from "react";
+import ReactDom from "react-dom";
+import {Provider} from "react-redux";
+import thunk from 'redux-thunk'; //异步处理插件
+import {BrowserRouter,Route,Redirect,Switch} from 'react-router-dom';
+// import './config';
+import reducers from './reducer';
+import AutoRouter from './component/autoRouter/autoRouter'
+import AgentView from './container/agentView/AgentView';
+import HelpView from './container/help/HelpView';
+import DashboardView from './container/dashboard/DashboardView';
+import MyCruiseView from './container/my-cruise/MyCruiseView';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// 新建store
+const store = createStore(reducers,compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension() || (()=>{})
+));
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDom.render(
+    (<Provider store={store}>
+        <BrowserRouter>
+            <div>
+                <AutoRouter></AutoRouter>
+                <Switch>
+                    <Route path='/agent' component={AgentView}></Route>
+                    <Route path='/help' component={HelpView}></Route>
+                    <Route path='/dashboard' component={DashboardView}></Route>
+                    <Route path='/myCruise' component={MyCruiseView}></Route>
+                    {/* <Route component={Dashboard }></Route>     */}
+                </Switch>
+
+            </div>
+        </BrowserRouter>
+    </Provider>),
+    document.getElementById("root")
+);
