@@ -1,0 +1,29 @@
+.header{
+    border-bottom: 2px solid #e1e4e6;
+    background-color: #fff;
+}
+.header-container{
+    position: relative;
+    max-width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 60px;
+}
+.header-container img{
+    height: 60%;
+}
+.header-container .avatarImg{
+    border-radius: 50%;
+}
+.avatarImg-container{
+    position: absolute;
+    top:0;right: 20px;
+    height: 100%;
+    line-height: 60px;
+}
+.body-container{
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}

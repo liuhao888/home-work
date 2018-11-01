@@ -1,0 +1,26 @@
+.fiexd-sidebar{
+    background-color: #2d4054;
+    position: fixed;
+    top:60px;
+    left:50%;
+    margin-left: -600px;
+    bottom: 0;
+}
+
+.fiexd-sidebar li.active{
+    background-color: #435466;
+}
+.fiexd-sidebar li a{
+    color:#fff;
+    font-size: 14px;
+    display: block;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+}
+.fiexd-sidebar li.active{
+    background-color: #0084cf;
+}
+.fiexd-sidebar li:hover{
+    background-color: #435466;
+}
