@@ -1,20 +1,21 @@
 import React from 'react';
+import './agent.css';
 // import {connect} from 'react-redux';
 
 // @connect(
 //     state=>state.user,
 //     {update}
 // )
-class BoosInfo extends React.Component{
+class AgentView extends React.Component{
 
     render(){
       
         return(
-            <div>
+            <div className="container">
                AgentView
             </div>
         )
     }
 }
 
-export default BoosInfo;
+export default AgentView;

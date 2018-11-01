@@ -37,7 +37,6 @@ ReactDom.render(
             <Route path="/help" component={HelpView} />
             <Route path="/dashboard" component={DashboardView} />
             <Route path="/myCruise" component={MyCruiseView} />
-            {/* <Route component={Dashboard }></Route>     */}
           </Switch>
         </div>
       </div>
